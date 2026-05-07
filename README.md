@@ -1,353 +1,305 @@
 # 🔬 Autonomous Deep Research Agent
 
-An intelligent multi-agent research system that autonomously browses the web, synthesizes information, self-critiques, and produces high-quality research reports with source citations.
+<p align="center">
+  <b>An AI-powered multi-agent research system capable of autonomous web exploration, synthesis, self-critique, and iterative report refinement.</b>
+</p>
 
-![Python Version](https://img.shields.io/badge/python-3.12+-blue.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.35.0-red.svg)
-![LangGraph](https://img.shields.io/badge/langgraph-0.2.16-green.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+<p align="center">
+  <img src="https://img.shields.io/badge/LLM-Gemini%202.0-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Framework-LangGraph-green?style=flat-square"/>
+  <img src="https://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Architecture-Multi--Agent-orange?style=flat-square"/>
+</p>
 
-## 🎯 Features
+---
 
-- **🤖 Multi-Agent Architecture**: Search, Synthesize, Critique, and Revise agents working in harmony
-- **🔄 Reflection Loop**: Self-critique mechanism that iteratively improves report quality
-- **🔍 Real-time Web Search**: Powered by Tavily API for up-to-date information
-- **🧠 Advanced LLM**: Built on Google's Gemini 2.0 Flash model
-- **📊 Source Citations**: Every claim cites its source with URLs
-- **🎨 Streamlit UI**: Beautiful, interactive web interface
-- **📥 Export Options**: Download reports as Markdown or plain text
-- **⚠️ Contradiction Handling**: Explicitly identifies and addresses conflicting information
+## 💡 What This Project Does
 
-## 🏗️ Architecture
+This system autonomously performs:
 
+✅ Web research
+✅ Multi-source information gathering
+✅ Knowledge synthesis
+✅ Self-reflection & critique
+✅ Iterative report refinement
+
+👉 Transforming raw internet data into structured, citation-backed intelligence reports.
+
+---
+
+## 🚨 Problem Statement
+
+Traditional AI chatbots:
+
+* Provide shallow answers
+* Lack source validation
+* Rarely self-correct
+* Struggle with multi-step reasoning
+
+👉 Result: unreliable research outputs
+
+---
+
+## 🎯 Solution
+
+A **multi-agent autonomous research architecture** that:
+
+* Searches the web in real time
+* Synthesizes evidence across sources
+* Detects contradictions
+* Critiques its own output
+* Revises reports iteratively
+
+This mimics how human researchers operate:
+**Research → Analyze → Critique → Improve**
+
+---
+
+## 🧠 Multi-Agent Workflow
+
+```id="agentflow1"
+User Query
+    │
+    ▼
+Search Agent
+    │
+    ▼
+Synthesis Agent
+    │
+    ▼
+Critique Agent
+    │
+    ▼
+Revision Agent
+    │
+    ▼
+Final Research Report
 ```
-┌─────────────┐
-│   Search    │ → Web crawling via Tavily API
-└──────┬──────┘
-       ↓
-┌─────────────┐
-│ Synthesize  │ → Initial draft with citations
-└──────┬──────┘
-       ↓
-┌─────────────┐
-│  Critique   │ → Self-reflection on gaps & contradictions
-└──────┬──────┘
-       ↓
-┌─────────────┐
-│   Revise    │ → Quality improvement based on feedback
-└──────┬──────┘
-       ↓
-   [LOOP] ←────┘ (Multiple iterations for quality)
+
+---
+
+## 🔄 Reflection Loop Architecture
+
+The system improves report quality using iterative self-evaluation.
+
+```id="reflectionloop"
+Draft Generation
+      │
+      ▼
+Self-Critique
+      │
+      ▼
+Gap Detection
+      │
+      ▼
+Report Revision
+      │
+      └──────► LOOP
 ```
 
-## 📋 Prerequisites
+👉 This creates significantly higher-quality outputs than single-pass generation.
 
-- Python 3.12 or higher
-- API Keys:
-  - **Gemini API Key** from [Google AI Studio](https://aistudio.google.com/app/apikey)
-  - **Tavily API Key** from [Tavily](https://app.tavily.com/) (free tier available)
+---
 
-## 🚀 Quick Start
+## ⚡ Core Features
 
-### 1. Clone the Repository
+### 🔍 Autonomous Web Research
 
-```bash
+* Real-time search via Tavily API
+* Multi-source evidence collection
+* Up-to-date information retrieval
+
+---
+
+### 🧠 AI-Powered Synthesis
+
+* Structured report generation
+* Executive summaries
+* Contradiction analysis
+* Citation-backed reasoning
+
+---
+
+### 🔄 Self-Reflection System
+
+* Identifies weak claims
+* Detects missing information
+* Improves factual consistency
+
+---
+
+### 📚 Source Attribution
+
+Every major claim includes:
+
+* Source references
+* URLs
+* Supporting evidence
+
+---
+
+### 🎨 Interactive Research Interface
+
+Built using Streamlit for:
+
+* Real-time workflow visibility
+* Research progress tracking
+* Report export support
+
+---
+
+## 🛠 Tech Stack
+
+| Layer                  | Technology       |
+| ---------------------- | ---------------- |
+| LLM                    | Gemini 2.0 Flash |
+| Workflow Orchestration | LangGraph        |
+| Search Engine          | Tavily API       |
+| Frontend               | Streamlit        |
+| Language               | Python 3.12+     |
+
+---
+
+## 🏗 System Design
+
+```id="sysdesign1"
+Frontend (Streamlit)
+        │
+        ▼
+LangGraph Orchestrator
+        │
+ ┌──────┼──────┐
+ ▼      ▼      ▼
+Search  Critique  Revision
+Agent    Agent      Agent
+        │
+        ▼
+Gemini LLM Engine
+        │
+        ▼
+Structured Research Output
+```
+
+---
+
+## 🚀 Run Locally
+
+```bash id="runagent1"
 git clone https://github.com/yourusername/deep-research-agent.git
 cd deep-research-agent
-```
 
-### 2. Create Virtual Environment
-
-```bash
-# Windows
 python -m venv venv
+
+# Windows
 venv\Scripts\activate
 
-# Mac/Linux
-python3 -m venv venv
+# Linux/Mac
 source venv/bin/activate
-```
 
-### 3. Install Dependencies
-
-```bash
 pip install -r requirements.txt
-```
 
-### 4. Configure API Keys
-
-Open `research_agent.py` and replace the API keys with your own:
-
-```python
-GEMINI_API_KEY = "your-gemini-api-key-here"
-TAVILY_API_KEY = "your-tavily-api-key-here"
-```
-
-### 5. Run the Application
-
-#### Streamlit Web Interface (Recommended)
-
-```bash
 streamlit run research_agent.py
 ```
 
-Then open your browser to `http://localhost:8501`
+---
 
-#### Command Line Interface
+## 📊 Example Research Queries
 
-```bash
-python -c "from research_agent import run_research_cli; run_research_cli()"
-```
+### Technology
 
-## 📖 Usage Guide
+* “Compare GPT-4, Claude, and Gemini in enterprise use cases”
 
-### Streamlit UI Mode
+### Business
 
-1. **Enter Research Topic**: Type your research question or topic
-2. **Set Reflection Loops**: Choose 1-3 iterations (more = higher quality)
-3. **Click Start**: Watch the research process unfold in real-time
-4. **Review Output**: 
-   - Initial Draft
-   - Peer Critique
-   - Final Report
-5. **Download**: Save your report as Markdown or text
+* “AI agent startup ecosystem analysis 2026”
 
-### Example Topics
+### Science
 
-Try these research questions:
+* “Commercial viability of nuclear fusion”
 
-- **Technology**: *"Compare GPT-4 vs Claude vs Gemini - capabilities, pricing, and use cases 2025"*
-- **Science**: *"Latest breakthroughs in nuclear fusion: practical timeline and commercial challenges"*
-- **Business**: *"AI agent market analysis: trends, key players, and predictions for 2025-2026"*
-- **Health**: *"CRISPR gene editing: current clinical applications, successes, and ethical considerations"*
-- **Energy**: *"Solid-state batteries vs lithium-ion: technical progress and commercialization status"*
+### Healthcare
 
-## 📁 Project Structure
-
-```
-deep-research-agent/
-├── research_agent.py      # Main application code
-├── requirements.txt       # Python dependencies
-├── README.md             # This file
-└── research_reports/     # Generated reports (auto-created)
-```
-
-## 🧠 How It Works
-
-### Phase 1: Search
-The agent uses Tavily API to search the web for relevant, up-to-date information on your topic. It collects up to 10 high-quality sources.
-
-### Phase 2: Synthesize
-The Gemini LLM analyzes all sources and creates a comprehensive draft report with:
-- Executive Summary
-- Key Findings
-- Contradictions Analysis
-- Conclusion
-- Further Research Needs
-
-### Phase 3: Critique
-The agent critically evaluates its own draft, identifying:
-- Information gaps
-- Unresolved contradictions
-- Weakly supported claims
-- Improvement suggestions
-
-### Phase 4: Revise
-Based on the critique, the agent produces an improved final report with stronger evidence and better organization.
-
-### Reflection Loop
-The critique-revise cycle repeats for multiple iterations (configurable), each time improving quality.
-
-## 🛠️ Technical Stack
-
-| Component | Technology |
-|-----------|------------|
-| LLM | Google Gemini 2.0 Flash |
-| Search | Tavily API |
-| Workflow | LangGraph |
-| UI | Streamlit |
-| Language | Python 3.12+ |
-
-## 📊 Sample Output
-
-The agent produces reports with:
-
-```
-# Research Report: [Your Topic]
-
-**Generated:** 2025-01-15 14:30:22
-**Reflection Loops:** 2
+* “Current CRISPR clinical applications”
 
 ---
 
-## Executive Summary
-[Comprehensive overview with key findings]
+## 🎯 What This Project Demonstrates
 
-## Key Findings
-1. Finding 1 [Source 1]
-2. Finding 2 [Source 3]
+This project showcases:
 
-## Contradictions Analysis
-- Source 2 claims X, while Source 5 suggests Y...
-
-## Conclusion
-[Synthesized conclusions with citations]
-
-## Further Research Needed
-[Gaps requiring additional investigation]
-```
-
-## 🔧 Configuration
-
-Modify the constants in `research_agent.py`:
-
-```python
-GEMINI_MODEL = "gemini-2.0-flash-exp"  # Change Gemini model
-MAX_SEARCH_RESULTS = 10                 # Number of sources to fetch
-SEARCH_DEPTH = "advanced"               # "basic" or "advanced"
-```
-
-## 🐛 Troubleshooting
-
-### Issue: "Missing API Keys"
-**Solution**: Verify API keys in `research_agent.py` are correct and active.
-
-### Issue: "Model not found"
-**Solution**: Update `GEMINI_MODEL` to an available model like `gemini-2.0-flash-exp` or `gemini-pro`.
-
-### Issue: No search results
-**Solution**: Broaden your topic or check Tavily API quota.
-
-### Issue: Slow performance
-**Solution**: Reduce reflection loops to 1 or use "basic" search depth.
-
-## 📈 Performance Tips
-
-1. **For Quick Answers**: Use 1 reflection loop
-2. **For Balanced Quality**: Use 2 reflection loops (default)
-3. **For Deep Research**: Use 3 reflection loops
-4. **Broad Topics**: Get better results than narrow ones
-5. **Recent Topics**: Work best (post-2023)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see below:
-
-```
-MIT License
-
-Copyright (c) 2025 Deep Research Agent
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions...
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
-
-## 🙏 Acknowledgments
-
-- [Google Gemini](https://deepmind.google/technologies/gemini/) for LLM capabilities
-- [Tavily](https://tavily.com/) for search API
-- [LangChain](https://www.langchain.com/) for LangGraph framework
-- [Streamlit](https://streamlit.io/) for beautiful UI
-
-## 📧 Contact
-
-For questions or support:
-- Open an issue on GitHub
-- Email: your-email@example.com
-
-## 🌟 Star History
-
-If you find this useful, please star the repository! ⭐
+✅ Multi-agent AI systems
+✅ Autonomous reasoning workflows
+✅ LLM orchestration
+✅ Reflection-based AI architectures
+✅ Real-time information retrieval
+✅ AI product engineering
 
 ---
 
-**Built with ❤️ for researchers, students, and knowledge seekers**
-```
+## 💼 Recruiter Takeaway
+
+This is NOT just a chatbot.
+
+It demonstrates:
+
+* Agentic AI workflows
+* Advanced prompt orchestration
+* Iterative reasoning systems
+* Production-style AI architecture
+
+👉 These are highly valuable GenAI engineering skills.
 
 ---
 
-## Optional: Create a `.gitignore` file
+## 🔮 Future Enhancements
 
-```gitignore
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-venv/
-env/
-ENV/
-.venv
-
-# Streamlit
-.streamlit/secrets.toml
-
-# Reports
-research_report_*.md
-research_report_*.txt
-*.md
-!README.md
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-```
+* [ ] Memory-enabled research agents
+* [ ] Multi-modal research (PDFs, videos, images)
+* [ ] Vector database integration
+* [ ] Autonomous citation verification
+* [ ] Deep Research API platform
+* [ ] Team collaboration system
+* [ ] Fine-tuned domain-specific agents
 
 ---
 
-## Quick Setup Commands (Copy-Paste)
+## 📈 Why This Project Matters
 
-```bash
-# 1. Create project
-mkdir deep_research_agent && cd deep_research_agent
+Modern AI is moving from:
+❌ Single-response chatbots
 
-# 2. Create files
-cat > requirements.txt << 'EOF'
-streamlit==1.35.0
-langgraph==0.2.16
-langchain==0.3.0
-langchain-google-genai==1.0.10
-tavily-python==0.5.0
-pydantic==2.9.2
-EOF
+To:
+✅ Autonomous intelligent systems
 
-# 3. Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+This project aligns directly with that transition.
 
-# 4. Install packages
-pip install -r requirements.txt
+---
 
-# 5. Create research_agent.py (copy the code from previous message)
+## ⭐ Support
 
-# 6. Run the app
-streamlit run research_agent.py
-```
+If you found this interesting:
 
+* ⭐ Star the repository
+* 🍴 Fork it
+* 🚀 Extend the agent architecture
+
+---
+
+## 👨‍💻 Author
+
+**Tanmay Kshirsagar**
+
+Passionate about:
+
+* Generative AI
+* Autonomous Systems
+* AI Agents
+* ML Engineering
+
+---
+
+## 🔥 Final Thought
+
+The future of AI is not just answering questions.
+
+👉 It’s building systems that can **research, reason, critique, and improve themselves.**
