@@ -1,0 +1,12 @@
+# Gemini API Configuration
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-2.5-flash
+
+# Tavily API Configuration
+TAVILY_API_KEY=
+
+# Research Configuration
+MAX_REFLECTION_ITERATIONS=2
+SEARCH_DEPTH=advanced
+MAX_SEARCH_RESULTS=10
+
