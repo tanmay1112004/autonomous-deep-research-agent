@@ -1,6 +1,3 @@
-# README.md
-
-```markdown
 # 🔬 Autonomous Deep Research Agent
 
 An intelligent multi-agent research system that autonomously browses the web, synthesizes information, self-critiques, and produces high-quality research reports with source citations.
