@@ -185,7 +185,7 @@ Structured Research Output
 ## 🚀 Run Locally
 
 ```bash id="runagent1"
-git clone https://github.com//deep-research-agent.git
+git clone https://github.com/Tanmay1112004/deep-research-agent.git
 cd deep-research-agent
 
 python -m venv venv
