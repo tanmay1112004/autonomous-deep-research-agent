@@ -38,6 +38,9 @@ This system autonomously performs:
 ![demo](https://github.com/Tanmay1112004/Autonomous-Deep-Research-Agent/blob/main/demo%20_app_img/Screenshot_7-5-2026_171429_musical-cod-69rxp9jqvv5xf5xqg-8501.app.github.dev.jpeg)
 
 ![demo](https://github.com/Tanmay1112004/Autonomous-Deep-Research-Agent/blob/main/demo%20_app_img/Screenshot_7-5-2026_171452_musical-cod-69rxp9jqvv5xf5xqg-8501.app.github.dev.jpeg)
+
+![demo](https://github.com/Tanmay1112004/Autonomous-Deep-Research-Agent/blob/main/demo%20_app_img/Screenshot_7-5-2026_17149_musical-cod-69rxp9jqvv5xf5xqg-8501.app.github.dev.jpeg)
+
 ---
 
 ## 🚨 Problem Statement
